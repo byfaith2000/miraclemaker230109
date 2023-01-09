@@ -1,0 +1,12 @@
+pandas by 이숙번 21.8.19
+
+콜랩노트(기본기): 
+https://colab.research.google.com/drive/1LwESD2TDOrctb73cKmFjN3lrBGqnh9_b?usp=sharing
+
+
+
+데이타:
+https://raw.githubusercontent.com/blackdew/dplus-tensorflow/master/csv/titanic.csv
+
+https://raw.githubusercontent.com/Jangrae/csv/master/titanic_simple.csv
+

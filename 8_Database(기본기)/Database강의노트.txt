@@ -1,0 +1,208 @@
+21.8.27 by 이고잉
+
+https://cdpt.in/OTMyNTY3 : 복습노트
+
+https://opentutorials.org/course/3162
+https://opentutorials.org/course/3161
+https://opentutorials.org/module/4118
+
+강사님 말씀하신 복습방법이 정말 좋은 것 같습니다!!
+웹말고 다른 것(텐스플로, 판다스..)도 본질적인 것이 뭔지 좀 가르쳐 주시면 좋을 것 같습니다.^^
+
+
+칼럼의 유형을 정해서 이상한건 차단한다. 
+
+
+https://airtable.com/shrJK2ASNROVAGnbj
+
+
+https://sqlitebrowser.org/
+
+
+https://www.codecademy.com/learn/learn-sql/modules/learn-sql-queries/cheatsheet
+
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'mysql',
+        'mysql is ...', 
+        'egoing', 
+        'programmer'
+    );
+
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'sqllite',
+        'sqllite is ...', 
+        'egoing', 
+        'programmer'
+    );
+
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'oracle',
+        'oracle is ...', 
+        'basta', 
+        'bio'
+    );
+
+
+SELECT * FROM topic;
+
+
+DELETE FROM topic WHERE id=1;
+
+
+8:00
+CREATE TABLE "topic" (
+	"id"	INTEGER NOT NULL,
+	"title"	TEXT NOT NULL,
+	"body"	TEXT,
+	"author_name"	TEXT,
+	"author_job"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+DELETE FROM topic;
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'mysql',
+        'mysql is ...', 
+        'egoing', 
+        'programmer'
+    );
+
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'sqllite',
+        'sqllite is ...', 
+        'egoing', 
+        'programmer'
+    );
+
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'oracle',
+        'oracle is ...', 
+        'basta', 
+        'bio'
+    );
+
+
+8:02
+CREATE TABLE "topic" (
+	"id"	INTEGER NOT NULL,
+	"title"	TEXT NOT NULL,
+	"body"	TEXT,
+	"author_name"	TEXT,
+	"author_job"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'mysql',
+        'mysql is ...', 
+        'egoing', 
+        'programmer'
+    );
+
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'sqllite',
+        'sqllite is ...', 
+        'egoing', 
+        'programmer'
+    );
+
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'oracle',
+        'oracle is ...', 
+        'basta', 
+        'bio'
+    );
+
+
+
+python3 sqlite로 구글링
+
+import sqlite3
+con = sqlite3.connect('example.db')
+
+
+con.execute('SELECT * FROM topic')
+
+
+
+CREATE TABLE "topic" (
+	"id"	INTEGER,
+	"title"	TEXT NOT NULL,
+	"body"	TEXT,
+	"author_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+
+
+
+SQLite
+
+CREATE TABLE "topic" (
+	"id"	INTEGER,
+	"title"	TEXT NOT NULL,
+	"body"	TEXT,
+	"author_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+
+
+CREATE TABLE "author" (
+	"id"	INTEGER,
+	"name"	TEXT NOT NULL,
+	"job"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+
+INSERT INTO topic(title, body, author_id) VALUES('sqllite', 'sqllite is ...', 1);
+INSERT INTO topic(title, body, author_id) VALUES('mysql', 'mysql is ...', 1);
+INSERT INTO topic(title, body, author_id) VALUES('oracle', 'oracle is ...', 2);
+
+
+https://github.com/egoingsb/daegu-ai-hub-database-example
+
+
+(복습) - 데이타베이스1
+*데이타베이스란 데이타를 저장하고 꺼내는 기술이다. 
+*성능, 보안 등의 한계를 가진 파일을 극복하기 위해 만들어졌다. 
+*input : Create, Update, Delete
+ output : Read
+
+데이타베이스2 4강 보면 됨(MySQL)
+
+
+
+
+
+
+
+
+
+
+
+
+

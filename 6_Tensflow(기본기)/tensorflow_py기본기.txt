@@ -1,0 +1,53 @@
+
+1. 데이터 준비
+import pandas as pd
+import tensorflow as tf
+path = "https://raw.githubusercontent.com/blackdew/ml-tensorflow/master/data/csv/lemonade.csv"
+lemon = pd.read_csv(path)
+※ print(lemon.shape)
+
+x = lemon[['온도']]
+y = lemon[['판매량']]
+※ print(x.shape, y.shape)
+
+※ y.head()
+
+
+2. 모델 준비
+X = tf.keras.layers.Input(shape=[1])
+Y = tf.keras.layers.Dense(1)(X)
+model = tf.keras.models.Model(X, Y)
+model.compile(loss='mse')
+
+
+3. 모델 학습
+model.fit(x, y, epochs=1000, verbose=0)
+model.fit(x, y, epochs=10)
+
+
+4. 모델 이용
+model.predict(x)
+
+5. weight 확인
+model.get_weights()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

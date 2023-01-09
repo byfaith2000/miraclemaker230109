@@ -1,0 +1,67 @@
+21.8.27 by 이고잉
+====================SQLite 기본기===========================
+*데이타 입력시
+
+INSERT INTO 
+    topic (title, body, author_name, author_job)
+    VALUES(
+        'sqllite',
+        'sqllite is ...', 
+        'egoing', 
+        'programmer'
+    );
+
+
+*데이타 조인시
+SELECT*FROM topic LEFT JOIN author ON topic.author_id = author.id;
+
+
+*파이썬 실행해서 데이타 업데이트 하는 방법
+- 아래 파이썬 만들고 터미널 열어서 실행하면 됨
+
+import sqlite3
+con = sqlite3.connect('topic_author_manager.db')
+name = input('이름 : ')
+job = input('직업 : ')
+sql = "INSERT INTO author(name, job) VALUES('"+name+"', '"+job+"')"
+con.execute(sql)
+con.commit()
+con.close()
+
+========================================================
+*데이타 읽어 들이는 법(추가)
+-아래 파이썬 코딩해서 터미널에서 실행
+
+import sqlite3
+con = sqlite3.connect('flask.db')  //DB데이터와 연결시킴
+result = con.execute('SELECT * FROM topic') //DB topic을 선택해라
+abc = result.fetchall()  //fecthall까지 해야 실제 실행됨
+print(abc)
+
+※
+for row in rows:
+    print(row)
+con.close()
+=========================================================
+21.8.30 수업 시작 전 복습
+INSERT INTO topic (title, body) VALUES('css', 'css is ...')
+=>id는 고유값(Auto Incre)이므로 따로 안해도 됨i
+
+SELECT * FROM topic;  ===>표 볼 때
+
+
+import sqlite3
+
+conn = sqlite3.connect('test.db')
+===>VSC와 연결
+
+
+import sqlite3
+cnt = sqlite3.connect('topics.db')
+result = cnt.execute('SELECT * FROM topic')
+topics = result.fetchall()
+print('topics', topics)
+===>vsc에서 내용 보기
+
+
+

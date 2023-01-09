@@ -1,0 +1,33 @@
+21.8.26 크롤링 by 이숙번
+
+(기본기)
+https://colab.research.google.com/drive/1YIWfid74TDP5EC3sujRVM73P5aFf8yfe?usp=sharing
+
+이고잉 오픈튜 > 언어 >정규표현식 패턴들 참조
+
+https://regexone.com/
+\d : 어떤 숫자든 1개
+. : 숫자든 문자든 모든 캐릭터 찾는 것
+\. : 순수 . 찾는 것
+
+http://www.regexr.com/
+
+
+
+
+https://github.com/byfaith2000/miracle-maker0909_2.git
+
+
+
+
+
+
+links = get_links('http://info.cern.ch')
+print(len(links))
+
+for i in range(20):
+  link = links.pop(0)
+  links += get_links(link[0])
+  print(link[0], len(links))
+
+links

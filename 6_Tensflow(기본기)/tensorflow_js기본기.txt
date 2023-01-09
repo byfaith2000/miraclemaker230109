@@ -1,0 +1,82 @@
+
+<남의 모델 사용할 때>
+ - https://www.tensorflow.org 접속
+ - 자바스크립트용 선택
+ - TensorFlow.js 시작하기 선택
+ - 모델 보기 선택
+ - ex. 이미지 분류(코드 보기) 선택
+ - 하단 via Script Tag 코드 복사해서 html body 태그안에 붙여넣기
+ - 사진 파일 변경하여 로딩하기
+ - 웹브라우저 실행(일반 브라우저 실행안되고 웹서버 있어야 함)
+ - 웹화면에서 검사화면 진입 및 콘솔 실행하면 하단에 결과 나옴
+
+
+<내 모델 만들고 싶을 때>
+ - https://www.tensorflow.org 접속
+ - TensorFlow>학습>For JavaScript>튜토리얼에서
+ - 설정 진입시 스크립트 태그(첫 번째 코드)를 통한 사용법에 있는 코드를 복사해서
+   html head 태그 안에 붙여넣기 한다. 
+ - 그리고 아래 코딩
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <script>
+        //1.데이타 준비
+        var 온도 = [20, 21, 22, 23];
+        var 판매량 = [40, 42, 44, 46];
+        var 원인 = tf.tensor(온도);
+        var 결과 = tf.tensor(판매량);
+
+        //2.모델
+        var X = tf.input({ shape: [1] });
+        var Y = tf.layers.dense({ units: 1 }).apply(X);
+        var model = tf.model({ inputs : X, outputs: Y });
+        var compileParam = { optimizer: tf.train.adam(), loss: tf.losses.meanSquaredError }
+        model.compile(compileParam);
+
+        //3.모델 학습
+        var fitParam = { epochs: 2000, callbacks:{onEpochEnd:function(epoch, logs){console.log('epoch', epoch, logs, 'RMSE=>', Math.sqrt(logs.loss));}}}
+        model.fit(원인, 결과, fitParam).then(function(result) {
+            var 예측한결과 = model.predict(원인);
+            예측한결과.print();
+        });
+
+        //4.모델 이용
+        var 다음주온도 = [14, 17, 19, 20, 25]
+        var 다음주원인 = tf.tensor(다음주온도);
+        var 다음주결과 = model.predict(다음주원인);
+        다음주결과.print();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
